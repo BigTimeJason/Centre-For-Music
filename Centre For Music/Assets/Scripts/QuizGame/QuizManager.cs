@@ -109,7 +109,7 @@ public class QuizManager : MonoBehaviour
             options[i].SetActive(false);
         }
 
-        FindObjectOfType<PlayerInformation>().addGamePoints("quiz", correctQuestions);
+        FindObjectOfType<PlayerInformation>().addGamePoints("Quiz", correctQuestions);
         if (correctQuestions > 4)
         {
             textManager.write("You answered " + correctQuestions + " correctly... Fine you can have your singer back. You can safely back out of this game using the back button.");

@@ -20,10 +20,15 @@ public class FinishLevel : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log(FindObjectOfType<PlayerInformation>().isGameDone(gameName));
-            FindObjectOfType<PlayerInformation>().setGameDone(gameName, true);
-            FindObjectOfType<PlayerInformation>().addGamePoints(gameName, (int)timeToComplete);
-            Debug.Log(FindObjectOfType<PlayerInformation>().isGameDone(gameName));
+            SetHighScores();
         }
+    }
+
+    public void SetHighScores()
+    {
+        Debug.Log(FindObjectOfType<PlayerInformation>().isGameDone(gameName));
+        FindObjectOfType<PlayerInformation>().setGameDone(gameName, true);
+        FindObjectOfType<PlayerInformation>().addGamePoints(gameName, (int)timeToComplete);
+        Debug.Log(FindObjectOfType<PlayerInformation>().isGameDone(gameName));
     }
 }
