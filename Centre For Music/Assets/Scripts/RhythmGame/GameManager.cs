@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public AudioSource theMusic;
+    public AudioClip victory;
+    public bool isDone = false;
 
     public bool startPlaying;
 
@@ -52,6 +54,7 @@ public class GameManager : MonoBehaviour
         {
             if(!FindObjectOfType<PauseManager>().IsPaused)
             {
+                isDone = false;
                 startPlaying = true;
                 theBS.hasStarted = true;
 
@@ -59,6 +62,11 @@ public class GameManager : MonoBehaviour
             }
         } else
         {
+            if (!theMusic.isPlaying &&  !isDone && !FindObjectOfType<PauseManager>().IsPaused)
+            {
+                isDone = true;
+                AudioSource.PlayClipAtPoint(victory, new Vector3(0, 0, -10));
+            }
             //if(!theMusic.isPlaying && !resultsScreen.activeInHierarchy)
             //{
             //    resultsScreen.SetActive(true);
