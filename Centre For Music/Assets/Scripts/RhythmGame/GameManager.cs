@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     {
         if(!startPlaying)
         {
-            if(Input.anyKeyDown)
+            if(!FindObjectOfType<PauseManager>().IsPaused)
             {
                 startPlaying = true;
                 theBS.hasStarted = true;

@@ -792,7 +792,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480954519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.05, y: 3.16, z: 0}
+  m_LocalPosition: {x: -5.05, y: 3.16, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1834,8 +1834,8 @@ MonoBehaviour:
   entered: {fileID: 8300000, guid: 1f714bbfba9b1df42bf7450bdd22f607, type: 3}
   locationName: Rhythm
   canClick: 0
-  description: Hmm... Seems like the band isn't quite ready yet. We'll perform once
-    they're all here!
+  description: The final performance is available once you've completed the other
+    three activities!
   finishedGameDescription: The band is all here! Let's go!
 --- !u!61 &1648511008
 BoxCollider2D:

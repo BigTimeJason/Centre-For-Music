@@ -28,7 +28,7 @@ public class Billboard : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Application.OpenURL("https://www.uwe.ac.uk/life/activities/centre-for-music");
+        if(FindObjectOfType<LocationScroller>().sceneNumber == -1) Application.OpenURL("https://www.uwe.ac.uk/life/activities/centre-for-music");
     }
 
     public void startMoving(bool isRight)

@@ -13,7 +13,7 @@ public class StartActivityButton : MonoBehaviour
         FindObjectOfType<PauseManager>().IsPaused = false;
         AudioSource.PlayClipAtPoint(clip, new Vector3(0, 0, -10));
         foreach (GameObject gameObject in toggleStart)
-        {
+        {   
             gameObject.SetActive(!gameObject.activeInHierarchy);
         }
     }

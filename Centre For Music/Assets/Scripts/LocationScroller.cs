@@ -37,6 +37,27 @@ public class LocationScroller : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        PlayerInformation playerInformation = FindObjectOfType<PlayerInformation>();
+        int completedGames = 0;
+        for (int i = 0; i < playerInformation.gameInfo.Count; i++)
+        {
+            if (playerInformation.gameInfo[i].IsDone == true)
+            {
+                completedGames++;
+            }
+        }
+
+        if (completedGames >= 3)
+        {
+            foreach (Location location in FindObjectsOfType<Location>())
+            {
+                location.setCanClick(true);
+            }
+        }
+    }
+
     public void startMoving(bool isRight)
     {
         if (isRight && sceneNumber != 1)
