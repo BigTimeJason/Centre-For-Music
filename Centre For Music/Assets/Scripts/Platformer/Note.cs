@@ -27,10 +27,10 @@ public class Note : MonoBehaviour
         AudioSource.PlayClipAtPoint(clip[Random.Range(0, clip.Length)], transform.position + new Vector3(0,0, -10));
         if (isGood)
         {
-
+            PlayerInformation.Instance.addGamePoints("Platform", 10);
         } else
         {
-
+            PlayerInformation.Instance.addGamePoints("Platform", -10);
         }
         Destroy(gameObject);
     }
