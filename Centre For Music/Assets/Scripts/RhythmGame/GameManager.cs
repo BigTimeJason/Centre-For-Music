@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class GameManager : MonoBehaviour
 {
     public AudioSource theMusic;
+    public AudioClip victory;
+    public bool isDone = false;
+    public GameObject info;
 
     public bool startPlaying;
 
@@ -52,6 +55,7 @@ public class GameManager : MonoBehaviour
         {
             if(!FindObjectOfType<PauseManager>().IsPaused)
             {
+                isDone = false;
                 startPlaying = true;
                 theBS.hasStarted = true;
 
@@ -59,6 +63,13 @@ public class GameManager : MonoBehaviour
             }
         } else
         {
+            if (!theMusic.isPlaying &&  !isDone && !FindObjectOfType<PauseManager>().IsPaused)
+            {
+                info.GetComponentInChildren<TextMeshProUGUI>().SetText("Congratulations for finishing this game! Hopefully you learned something about the Centre For Music");
+                info.SetActive(true);
+                isDone = true;
+                AudioSource.PlayClipAtPoint(victory, new Vector3(0, 0, -10));
+            }
             //if(!theMusic.isPlaying && !resultsScreen.activeInHierarchy)
             //{
             //    resultsScreen.SetActive(true);

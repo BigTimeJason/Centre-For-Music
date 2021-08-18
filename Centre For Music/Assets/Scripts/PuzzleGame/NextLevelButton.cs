@@ -14,6 +14,7 @@ public class NextLevelButton : MonoBehaviour
         Puzzle puzzleManager = FindObjectOfType<Puzzle>();
         if (puzzleManager.level == 3)
         {
+            FindObjectOfType<FinishLevel>().SetHighScores();
             FindObjectOfType<LevelLoader>().LoadLevel(true);
             return;
         }
